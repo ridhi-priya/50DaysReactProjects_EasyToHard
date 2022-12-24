@@ -1,0 +1,36 @@
+.page {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.success-message {
+  color: palegreen;
+}
+input {
+  display: block;
+  margin: 1em;
+  padding: 1em;
+  width: 23em;
+  border-radius: 8px;
+  outline: none;
+}
+span {
+  margin: 1rem;
+  color: red;
+}
+button {
+  margin: 0.8em;
+  padding: 0.8em 2em;
+  border: 1px solid #e4e6e8;
+  border-radius: 5px;
+  background-color: palegreen;
+  cursor: pointer;
+  transition: 0.1s ease-in;
+}
+
+button:hover {
+  background-color: greenyellow;
+}
