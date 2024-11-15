@@ -1,15 +1,15 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function BusinessInformation() {
-  const [brandName, setBrandName] = useState('');
-  const [brandType, setBrandType] = useState('Local');
-  const [streetAddress, setStreetAddress] = useState('');
-  const [city, setCity] = useState('');
-  const [zipCode, setZipCode] = useState('');
-  const [taxIdNumber, setTaxIdNumber] = useState('');
-  const [isNonAdultBeverageWaiverSigned, setIsNonAdultBeverageWaiverSigned] = useState(false);
+  // const [brandName, setBrandName] = useState("");
+  // const [streetAddress, setStreetAddress] = useState("");
+  // const [city, setCity] = useState("");
+  // const [zipCode, setZipCode] = useState("");
+  // const [taxIdNumber, setTaxIdNumber] = useState("");
+  const [isNonAdultBeverageWaiverSigned, setIsNonAdultBeverageWaiverSigned] =
+    useState(false);
   const [isAgreementSigned, setIsAgreementSigned] = useState(false);
-  const [coPdfUpload, setCoPdfUpload] = useState(null);
+  // const [coPdfUpload, setCoPdfUpload] = useState(null);
 
   const handleNonAdultBeverageWaiverSignature = () => {
     setIsNonAdultBeverageWaiverSigned(!isNonAdultBeverageWaiverSigned);
@@ -25,71 +25,80 @@ function BusinessInformation() {
 
   return (
     <div>
-      <h2>Business Information</h2>
       <p>Please, enter information about your company.</p>
 
+     
+
       <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="brandName">Brand Name*</label>
+        <div className="text-left">
+          <label className="text-sm block" htmlFor="brandType">
+            Brand Name*
+          </label>
           <input
             type="text"
-            id="brandName"
-            value={brandName}
-            onChange={(e) => setBrandName(e.target.value)}
+            id="brandType"
+            placeholder="Input your Brand Name"
+            className="border p-2 rounded-md"
             required
           />
         </div>
-        <div>
-          <label htmlFor="brandType">Brand Type*</label>
-          <select
+        <div className="text-left">
+          <label className="text-sm block" htmlFor="brandType">
+            Brand Type*
+          </label>
+          <input
+            type="text"
             id="brandType"
-            value={brandType}
-            onChange={(e) => setBrandType(e.target.value)}
+            placeholder="Input your Brand Type"
+            className="border p-2 rounded-md"
             required
-          >
-            <option value="Local">Local: Brands with distribution in 3 divisions or less OR multiple divisions but a total of 150 stores or less</option>
-            <option value="National">National: Brands with distribution in 4 or more divisions or in more than 150 stores</option>
-          </select>
+          />
         </div>
-
-        <div>
-          <label htmlFor="streetAddress">Street Address*</label>
+        <div className="text-left">
+          <label className="text-sm block" htmlFor="streetAddress">
+            Street Address*
+          </label>
+          <input
+            type="text"
+            id="brandType"
+            placeholder="Input your Street Address"
+            className="border p-2 rounded-md"
+            required
+          />
+        </div>
+        <div className="text-left">
+          <label className="text-sm block" htmlFor="city">
+            City*
+          </label>
+          <input
+            type="text"
+            id="City"
+            placeholder="Input your City"
+            className="border p-2 rounded-md"
+            required
+          />
+        </div>
+        <div className="text-left">
+          <label className="text-sm block" htmlFor="zipCode">
+            Zip Code*
+          </label>
           <input
             type="text"
             id="streetAddress"
-            value={streetAddress}
-            onChange={(e) => setStreetAddress(e.target.value)}
+            placeholder="Input your Zip Code"
+            className="border p-2 rounded-md"
             required
           />
         </div>
-        <div>
-          <label htmlFor="city">City*</label>
+        <div className="text-left">
+          <label className="text-sm block" htmlFor="taxIDNumber">
+            Tax ID Number*
+          </label>
           <input
             type="text"
-            id="city"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            required
-          />
-        </div>
-
-        <div>
-          <label htmlFor="zipCode">Zip Code*</label>
-          <input
-            type="text"
-            id="zipCode"
-            value={zipCode}
-            onChange={(e) => setZipCode(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="taxIdNumber">Tax ID Number*</label>
-          <input
-            type="text"
-            id="taxIdNumber"
-            value={taxIdNumber}
-            onChange={(e) => setTaxIdNumber(e.target.value)}
+            id="streetAddress"
+            placeholder="Input your Tax ID Number"
+            className="border p-2 rounded-md"
             required
           />
         </div>
@@ -97,7 +106,10 @@ function BusinessInformation() {
 
       <div className="mt-4">
         <h4>Documents</h4>
-        <p>Once the following documents are signed, you will be ready to get started.</p>
+        <p>
+          Once the following documents are signed, you will be ready to get
+          started.
+        </p>
 
         <div className="flex items-center mb-2">
           <label>
@@ -108,7 +120,9 @@ function BusinessInformation() {
             />
             Non-adult beverage Kroger market supplier waiver and release
           </label>
-          <span className="ml-2">{isNonAdultBeverageWaiverSigned ? '✓' : '✗'}</span>
+          <span className="ml-2">
+            {isNonAdultBeverageWaiverSigned ? "✓" : "✗"}
+          </span>
         </div>
 
         <div className="flex items-center mb-2">
@@ -120,7 +134,7 @@ function BusinessInformation() {
             />
             Electronically sign the agreement(s)
           </label>
-          <span className="ml-2">{isAgreementSigned ? '✓' : '✗'}</span>
+          <span className="ml-2">{isAgreementSigned ? "✓" : "✗"}</span>
         </div>
 
         <div className="flex items-center mt-4">

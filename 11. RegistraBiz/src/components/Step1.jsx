@@ -1,4 +1,5 @@
 // src/App.jsx
+import logo from '../assets/nablasol_logo.jpg'
 import { useState } from 'react';
 import Step2 from '../components/Step2'
 const Step1 = () => {
@@ -8,10 +9,19 @@ const Step1 = () => {
   const handlePrev = () => setStep(step - 1);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-purple-400 to-blue-600">
+    <div className="h-96 ">
+      <div className="flex justify-center items-center flex-col min-h-screen bg-gradient-to-r from-indigo-950	via-purple-800	 to-blue-900 ">
+
+      <div className="flex justify-between items-center">
+  <div className="flex items-center">
+    <img src={logo} alt="company Logo" className="w-10 h-10 mr-4" />
+    <h1 className="text-center text-white text-2xl font-semibold text-gray-800 mb-8 mr-4">Create New Account</h1>
+  </div>
+  <p className="text-white mr-4">Contact</p>
+</div> 
+
       <div className="w-full max-w-2xl p-8 bg-white shadow-lg rounded-lg">
         {/* Header */}
-        <h2 className="text-center text-3xl font-semibold text-gray-800 mb-8">Create New Account</h2>
         
         {/* Step Indicator */}
         <div className="flex justify-center space-x-4 mb-8">
@@ -22,9 +32,9 @@ const Step1 = () => {
 
         {/* Form Content */}
         {step === 1 && (
-          <div className="text-center">
+          <div className="text-center ">
             <h3 className="text-2xl font-semibold text-gray-700 mb-2">Step 1</h3>
-            <p className="text-gray-500 mb-8">
+            <p className="text-gray-500 mb-2">
               Enter the login information for your account. You will be able to create additional users after registering.
             </p>
             <div className="grid grid-cols-2 gap-4">
@@ -38,14 +48,16 @@ const Step1 = () => {
           </div>
         )}
         {step === 2 && (
-          <div className="text-center">
-            <h3 className="text-2xl font-semibold text-gray-700 mb-2">Step 2</h3>
-            <p className="text-gray-500 mb-8">
-              Fill out your business information.
+          <div className="h-96">
+          <div className="text-center ">
+            <h3 className="text-gray-500 mb-2">Step 2</h3>
+            <p className="text-2xl font-semibold text-gray-700 mb-2">
+             Business Information.
             </p>
             {/* Add form fields for business information here */}
+            
             <Step2 />
-          </div>
+          </div></div>
         )}
         {step === 3 && (
           <div className="text-center">
@@ -58,14 +70,21 @@ const Step1 = () => {
           </div>
         )}
 
-        {/* Navigation Buttons */}
+       
+      </div>
+      <div> {/* Navigation Buttons */}
         <div className="flex justify-between items-center mt-8">
           <button
-            onClick={handlePrev}
             disabled={step === 1}
-            className="text-blue-500 hover:underline disabled:opacity-50"
+            className="text-white hover:text-red hover:underline disabled:opacity-50"
           >
             &lt; Back to Login
+          </button>
+          <button
+            onClick={handlePrev}
+            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          >
+            {step <4 ? 'Previous Step ' : 'Submit'}
           </button>
           <button
             onClick={handleNext}
@@ -73,8 +92,9 @@ const Step1 = () => {
           >
             {step < 3 ? 'Next Step >' : 'Submit'}
           </button>
-        </div>
-      </div>
+        </div></div>
+    </div>
+    
     </div>
   );
 };
