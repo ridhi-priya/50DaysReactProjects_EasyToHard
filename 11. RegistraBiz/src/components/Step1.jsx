@@ -10,7 +10,7 @@ const Step1 = () => {
 
   return (
     <div className="h-96 ">
-      <div className="flex justify-center items-center flex-col min-h-screen bg-gradient-to-r from-indigo-950	via-purple-800	 to-blue-900 ">
+      <div className="flex justify-center items-center flex-col min-h-screen bg-gradient-to-r from-indigo-950	via-purple-800 to-blue-900 ">
 
       <div className="flex justify-between items-center">
   <div className="flex items-center">
@@ -20,20 +20,33 @@ const Step1 = () => {
   <p className="text-white mr-4">Contact</p>
 </div> 
 
-      <div className="w-full max-w-2xl p-8 bg-white shadow-lg rounded-lg">
+      <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg">
         {/* Header */}
         
         {/* Step Indicator */}
-        <div className="flex justify-center space-x-4 mb-8">
-          <div className={`px-4 py-2 rounded-full ${step === 1 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}>1 Your Profile</div>
-          <div className={`px-4 py-2 rounded-full ${step === 2 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}>2 Business Information</div>
-          <div className={`px-4 py-2 rounded-full ${step === 3 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}>3 Additional Users</div>
-        </div>
+        <div className="flex justify-between mb-2 w-full">
+  <div
+    className={`flex-grow py-2 text-center ${step === 1 ? 'bg-blue-500 ' : 'bg-gray-200'}`}
+  >
+    1 Your Profile
+  </div>
+  <div
+    className={`flex-grow py-2 text-center ${step === 2 ? 'bg-blue-500 ' : 'bg-gray-200'}`}
+  >
+    2 Business Information
+  </div>
+  <div
+    className={`flex-grow py-2 text-center ${step === 3 ? 'bg-blue-500 ' : 'bg-gray-200'}`}
+  >
+    3 Additional Users
+  </div>
+</div>
+
 
         {/* Form Content */}
         {step === 1 && (
-          <div className="text-center ">
-            <h3 className="text-2xl font-semibold text-gray-700 mb-2">Step 1</h3>
+          <div className="text-center p-6">
+            <h3 className="text-l text-gray-400 mb-2">Step 1</h3>
             <p className="text-gray-500 mb-2">
               Enter the login information for your account. You will be able to create additional users after registering.
             </p>
@@ -48,8 +61,7 @@ const Step1 = () => {
           </div>
         )}
         {step === 2 && (
-          <div className="h-96">
-          <div className="text-center ">
+          <div className="text-center p-6">
             <h3 className="text-gray-500 mb-2">Step 2</h3>
             <p className="text-2xl font-semibold text-gray-700 mb-2">
              Business Information.
@@ -57,10 +69,10 @@ const Step1 = () => {
             {/* Add form fields for business information here */}
             
             <Step2 />
-          </div></div>
+          </div>
         )}
         {step === 3 && (
-          <div className="text-center">
+          <div className="text-center p-6">
             <h3 className="text-2xl font-semibold text-gray-700 mb-2">Step 3</h3>
             <p className="text-gray-500 mb-8">
               Add additional users to your account.
@@ -73,7 +85,7 @@ const Step1 = () => {
        
       </div>
       <div> {/* Navigation Buttons */}
-        <div className="flex justify-between items-center mt-8">
+        <div className="flex justify-between items-center mt-2">
           <button
             disabled={step === 1}
             className="text-white hover:text-red hover:underline disabled:opacity-50"
