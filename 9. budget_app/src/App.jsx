@@ -35,7 +35,7 @@ const App = () => {
         </div>
       </div>
     </div>
-    {/* </AppProvider> */}
+    // {/* </AppProvider> */}
     
   );
 };
